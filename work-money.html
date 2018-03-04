@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+		<title>Work & Money - Hack The Uni</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		
+		<meta name="author" content="Savyasachi Jha">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--images and text appearing in articles appearing on this website are aggregated from various sources which are credited on the relevant pages--> 
+		
+		<style>
+
+			body {
+				margin: 0;	
+				height: 100%;
+				background-color: #f9f9f9;
+				min-width: 1200px;
+			}
+			ul.nav {
+    			position: relative;
+    			width: 100%;
+    			overflow: hidden;
+    			list-style-type: none;
+    			margin: 0;
+    			padding: 0;
+    			z-index: 10;
+    			box-shadow: 0 1px 20px 1px #111;
+    			background-color: #ffffff;
+			}
+			ul.nav li {
+    			float: left;
+			}
+			ul.nav li.searchbox {
+    			float: right;
+    			margin:18px 22px 18px 18px;
+			}
+			#q {
+				height:22px;
+				width: 22px;
+				background-image: url('images/search-icon-dark.png');
+				background-position: 4px 5px;
+				background-repeat: no-repeat;
+				background-size: 16px 16px;
+				border:none;
+				transition: 0.4s;
+				border-radius: 14px;
+				font-size: 12px;
+			}
+			#q:hover {
+				background-image: url('images/search-icon-light.png');
+				border: 0px solid #cccccc;
+			}
+			#q:focus {
+				outline: none;
+				width: 120px;
+				padding: 0px 24px;
+				border: 1px solid #cccccc;
+				background-image: url('images/search-icon-light.png');
+				background-position: 4px 4px;
+			}
+			.gs-title {
+				margin:-15px 0px 0px -7px;
+			}
+			.gs-result {
+				margin-bottom:10px;
+			}
+			ul.nav a {
+    			padding: 15px;
+    			display: inline-block;
+    			text-decoration: none;
+    			color: #474747;
+			}
+			ul.nav a.menu {
+				padding: 1em;
+    			font-size: 20px;
+    			font-weight: bold;
+    			font-family: Trebuchet MS, Sans-Serif;
+    			transition: background-color 0.5s;
+    		}
+			ul.nav a.active {
+    			background-color: #b5ffb8;
+			}
+			ul.nav a.menu:hover {
+    			background-color: #00e51e;
+    			color: #ffffff;
+			}
+			ul.nav.bottomnav a.menu:hover {
+    			background-color: #ffffff;
+    			color: #000000;
+    			text-decoration: underline;
+			}
+			ul.nav a.menu:active {
+    			background-color: #dfffdb;
+			}
+			ul.nav.bottomnav {
+				position: absolute;
+    			bottom:0px;    			
+    			width: 100%;
+			}
+			ul.nav.bottomnav li {
+    			float: right;
+			}
+			ul.nav.bottomnav a {
+    			padding: 1 em 1.5em;
+				font-size: 15px;
+			}
+			#main {
+     			width: 90%;
+     			margin: auto;
+			}
+			#main h1 {
+				margin: 0px 0px 42px 21px;
+				font-family: 'Open Sans', Helvetica; 
+			}
+			.text-center {
+				margin: 0 25% 0 0;
+			}
+			.article { 
+   				position: relative; 
+   				width: 340px;
+   				height:240px;
+   				float:left;
+   				margin: 0px 21px 42px;
+			}
+			#articledrawer {
+				width: 1146px;
+				margin: 0 auto;
+			}
+			.article img { 
+				width: 100%;
+				height: 100%;
+			}
+			.article h2 { 
+   				position: absolute;
+   				bottom: 0px; 
+   				left: 0; 
+			}
+			.article h2 span { 
+   				color: #ffffff; 
+   				font-weight: bold;
+   				font-size: 1em;
+   				font-family: 'Open Sans', Helvetica; 
+   				line-height:2.23em;  
+   				background: rgba(0, 0, 0, 0.7);
+   				padding: 10px; 
+			}
+			.article:hover  h2 span { 
+				transition: 0.2s;
+				background: rgba(0, 0, 0, 1);
+			}
+			.content {
+				width=100%;
+				margin: 60px 0px 0px 0px;
+				color: #515151;
+			}
+			.content a {
+				text-decoration:none;
+				color: #02a300
+			}
+				
+		</style>
+		
+	</head>
+	
+	<body>
+			
+		<!--Facebook Comments Plugin-->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!--End of Facebook Comments Plugin-->	
+		
+		<ul class="nav">
+  			<li>
+  				<a href="index.html"><img src="images/logo.png" /></a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="about.html">ABOUT</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="study.html">STUDY</a>
+  			</li>
+  			<li>
+  				<a class = "menu active" href="work-money.html">WORK & MONEY</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="exercise.html">EXERCISE</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="living.html">LIVING</a>
+  			</li>
+  			<li class="searchbox">
+  				<!--Google Custom Search. Modification to allow custom design, by: http://stackoverflow.com/users/153723/ergec-->
+  				<div style="width:0px;overflow:hidden;height:0px;">
+					<gcse:search></gcse:search>
+				</div>
+				<form id="000634666056832805072:abkzi0wilfm" action="">
+					<input value="000634666056832805072:abkzi0wilfm" name="cx" type="hidden"/>
+					<input value="FORID:11" name="cof" type="hidden"/>
+					<input id="q" name="q" size="75" type="text"/>
+					<button style="position:absolute; right:-10000px;z-index=-10;" class="btn"></button>
+				</form>
+				<!--End of Google Custom Search-->
+  			</li>
+		</ul>
+
+		<div id="main">	
+			<div id="articledrawer">
+				<br/>
+				<br/>
+				<br/>
+				<h1>Hack The Work</h1>
+				<hr/>
+				<br/>
+				<br/>
+				<div class="article">
+					<a href="find-work-while-at-university.html">
+						<img src="images/student-job1.jpg" /> 
+						<h2><span>Finding Work <br />&nbsp;While At University</span></h2>
+					</a> 
+				</div> 
+				<div class="article">
+					<a href="student-budget.html">
+						<img src="images/student-budget1.jpg" /> 
+						<h2><span>How to Create <br />&nbsp;A Student Budget</span></h2>
+					</a> 
+				</div> 				
+				<div class="article">
+					<a href="work-university-balance.html">
+						<img src="images/work.jpg" /> 
+						<h2><span>Creating A Work/University <br />&nbsp;Balance</span></span></h2>
+					</a> 
+				</div> 
+			</div>
+    	</div>
+    	
+  		<ul class="nav bottomnav">
+  			<li>
+  				<a class = "menu" href="disclaimer.html">Disclaimer</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="contact.html">Contact Us</a>
+  			</li>
+  			<li class="text-center">
+  				<a class ="menu" href="https://goo.gl/forms/tM0N4i3P3fLxZodk1">Get Hack The Uni in your inbox!</a>
+  			</li>
+		</ul>	
+				
+	</body>
+	
+</html>
+
+<script type="text/javascript"> 
+
+	/* To implement Google Custom Search appearing as overlay on the screen
+	   Source: http://stackoverflow.com/users/153723/ergec */
+	(function() {
+		var cx = '000634666056832805072:abkzi0wilfm';
+		var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+		gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	})();
+	/* End of Google Custom Search */
+	
+</script>	
+<script>
+	  
+	/* Google Analytics */
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-86674334-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>

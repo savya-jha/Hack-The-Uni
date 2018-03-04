@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+		<title>Decorating Hacks For Your New Uni Room - Hack The Uni</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		
+		<meta name="author" content="Savyasachi Jha">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--images and text appearing in articles appearing on this website are aggregated from various sources which are credited on the relevant pages--> 
+
+		<style>
+
+			body {
+				margin: 0;	
+				height: 100%;
+				background-color: #f9f9f9;
+				min-width: 1000px;
+			}
+			ul.nav {
+    			position: relative;
+    			width: 100%;
+    			overflow: hidden;
+    			list-style-type: none;
+    			margin: 0;
+    			padding: 0;
+    			z-index: 10;
+    			box-shadow: 0 1px 20px 1px #111;
+    			background-color: #ffffff;
+			}
+			ul.nav li {
+    			float: left;
+			}
+			ul.nav li.searchbox {
+    			float: right;
+    			margin:18px 22px 18px 18px;
+			}
+			#q {
+				height:22px;
+				width: 22px;
+				background-image: url('images/search-icon-dark.png');
+				background-position: 4px 5px;
+				background-repeat: no-repeat;
+				background-size: 16px 16px;
+				border:none;
+				transition: 0.4s;
+				border-radius: 14px;
+				font-size: 12px;
+			}
+			#q:hover {
+				background-image: url('images/search-icon-light.png');
+				border: 0px solid #cccccc;
+			}
+			#q:focus {
+				outline: none;
+				width: 120px;
+				padding: 0px 24px;
+				border: 1px solid #cccccc;
+				background-image: url('images/search-icon-light.png');
+				background-position: 4px 4px;
+			}
+			.gs-title {
+				margin:-15px 0px 0px -7px;
+			}
+			.gs-result {
+				margin-bottom:10px;
+			}
+			ul.nav a {
+    			padding: 15px;
+    			display: inline-block;
+    			text-decoration: none;
+    			color: #474747;
+			}
+			ul.nav a.menu {
+				padding: 1em;
+    			font-size: 20px;
+    			font-weight: bold;
+    			font-family: Trebuchet MS, Sans-Serif;
+    			transition: background-color 0.5s;
+    		}
+			ul.nav a.active {
+    			background-color: #b5ffb8;
+			}
+			ul.nav a.menu:hover {
+    			background-color: #00e51e;
+    			color: #ffffff;
+			}
+			ul.nav.bottomnav a.menu:hover {
+    			background-color: #ffffff;
+    			color: #000000;
+    			text-decoration: underline;
+			}
+			ul.nav a.menu:active {
+    			background-color: #dfffdb;
+			}
+			ul.nav.bottomnav {
+				position: relative;
+    			bottom:0px;    			
+    			width: 100%;	
+			}
+			ul.nav.bottomnav li {
+    			float: right;
+			}
+			ul.nav.bottomnav a {
+    			padding: 1 em 1.5em;
+				font-size: 15px;
+			}
+			#main {
+     			width: 90%;
+     			margin: auto;
+			}
+			#main h1 {
+				margin: 0px 0px 42px 21px;
+				font-family: "Trebuchet ms", Sans-Serif; 
+			}
+			.text-center {
+				margin: 0 25% 0 0;
+			}
+			.content {
+				width=100%;
+				margin: 60px 0px 0px 0px;
+				color: #515151;
+			}
+			.content a {
+				text-decoration:none;
+				color: #02a300;
+			}
+			.leftbar {
+				float:left;
+				width:19%;
+				margin:1% 5% 0 0;
+				font-family: 'Open Sans', Helvetica !important;
+				font-weight:bold !important;
+				font-size: 1em;
+			}
+			.middlebar {
+				display:inline-block;
+				width:48%;
+				font-family: 'Open Sans', Helvetica !important;
+				line-height:2em;
+				font-size: 1.1em;
+			}
+			.middlebar h1 {
+				text-align: center;
+				line-height:1.3em !important;
+				font-family: 'Open Sans', Helvetica !important;
+			}
+			.middlebar h3 {
+				font-family: 'Open Sans Bold', Helvetica !important;
+			}
+			.middlebar img {
+				width:100%;
+			}
+			.rightbar {
+				float:right;
+				width:23%;
+				margin:-15px 0 0 2% ; 
+				overflow: hidden;
+				font-family: 'Open Sans', Helvetica;
+			}
+			hr {
+				border-top: 0.5px solid #cccccc;
+			}	
+			.articleright { 
+   				position: relative; 
+   				width: 100%;
+   				float:left;
+   				margin: 10px auto;
+			}
+			.articleright img { 
+				width: 100%;
+			}
+			.articleright h2 { 
+   				position: absolute;
+   				bottom: 0px; 
+   				left: 0; 
+			}
+			.articleright h2 span { 
+   				color: #ffffff; 
+   				font-size: 0.75em;
+   				font-family: "Trebuchet ms", Sans-Serif; 
+   				line-height:2.3em;  
+   				background: rgba(0, 0, 0, 0.7);
+   				padding: 10px 10px 10px 15px; 
+			}
+			.articleright:hover  h2 span { 
+				transition: 0.2s;
+				background: rgba(0, 0, 0, 1);
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+	
+		<!--Facebook Comments Plugin-->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!--End of Facebook Comments Plugin-->	
+		
+		<ul class="nav">
+  			<li>
+  				<a href="index.html"><img src="images/logo.png" /></a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="about.html">ABOUT</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="study.html">STUDY</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="work-money.html">WORK & MONEY</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="exercise.html">EXERCISE</a>
+  			</li>
+  			<li>
+  				<a class = "menu active" href="living.html">LIVING</a>
+  			</li>
+  			<li class="searchbox">
+  				<!--Google Custom Search. Modification to allow custom design, by: http://stackoverflow.com/users/153723/ergec-->
+  				<div style="width:0px;overflow:hidden;height:0px;">
+					<gcse:search></gcse:search>
+				</div>
+				<form id="000634666056832805072:abkzi0wilfm" action="">
+					<input value="000634666056832805072:abkzi0wilfm" name="cx" type="hidden"/>
+					<input value="FORID:11" name="cof" type="hidden"/>
+					<input id="q" name="q" size="75" type="text"/>
+					<button style="position:absolute; right:-10000px;z-index=-10;" class="btn"></button>
+				</form>
+				<!--End of Google Custom Search-->
+  			</li>
+		</ul>
+			
+		<div id="main">	
+			<div class="content">
+				<div class="leftbar">
+					Share This: <br /><br />
+					<!--To implement buttons to share on social media. Source: https://www.addtoany.com/buttons/for/website-->
+					<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+						<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+						<a class="a2a_button_facebook"></a>
+						<a class="a2a_button_linkedin"></a>
+						<a class="a2a_button_twitter"></a>
+						<a class="a2a_button_google_plus"></a>
+					</div>
+					<script async src="https://static.addtoany.com/menu/page.js"></script>
+					<!--End of Share Buttons-->
+					
+					<br />
+					<hr />
+					<h4>Writer: <br />Hannah Jane Parkinson</h4>
+					<br />
+				</div>
+				<div class="middlebar">
+					<h1>Decorating Hacks For Your New University Room</h1>
+					<p> 
+						One of the highlights of rocking up to uni during freshers' week is finding out where you'll be living. But in can be pretty underwhelming setting your bags down in a tiny room with a threadbare carpet, and old blu-tac all over the walls.
+						<br />
+						<br />
+						So, to solve this sorry state of affairs, we have come up with 19 things you can do to make your uni room totally awesome, and the envy of all others.
+					</p>
+					<h3>1. Get a giant map and scratch off where you have been</h3>
+					<img class="middlebar" src="images/decoration-uni-room1.jpg" />
+					<p>
+						This is an amazing idea beautifully executed. These maps are painted silver, and then you scratch countries off when you've been to them - like you would a scratch card - to reveal the colour of the country underneath. You can either buy one or make one.
+					</p>
+					<h3>2. Create a cool cork board, with actual corks</h3>
+					<p>
+						If you're someone who appreciate literalnes, then you will definitely appreciate this cork board made of...corks. Perfectly quirky. Plus an excuse to drink loads of wine. Find out how to make one <a href="http://www.youtube.com/watch?v=wuWW42bskjI">here</a>.
+					</p>
+					<h3>3. Blackboard paint / sticker</h3>
+					<p>
+						For an awesome twist on the traditional blackboard, invest in some blackboard paint or a blackboard sticker (yes, they exist!) Perfect for writing notes in strangely shaped places or when space is tight. Or painting old furniture in it to create awesome, original decoration.
+					</p>
+					<h3>4. Use coloured and patterned tape as photo frames</h3>
+					<p>
+						Framed pictures look amazing but who has loads of money to spend on frames? It's often quite cheap to pick up prints you love, but the frames themselves take a hefty chunk out of your student account. Instead, try using coloured and patterned tape to form frames. It's simple and easy to do and looks great.
+					</p>
+					<h3>5. Install an 'invisible' shelf for your books, so they float</h3>
+					<img class="middlebar" src="images/decoration-uni-room2.jpg" />
+					<p>
+						We are in love with the concept of these shelves. They just make your books appear as if they are floating, which is pretty much the nearest we are ever gonna get to Harry Potter. Find out how to make your own <a href="http://www.videojug.com/film/how-to-install-invisible-shelves">here</a>.
+						<br />
+						<br />
+						Or just buy one.
+					</p>
+					<!--Facebook Comment Box-->
+					<div class="fb-comments" data-href="http://hacktheuni.com/decoration-uni-room.html" data-width="100%" data-numposts="5"></div>
+					<!--End of Facebook Comment Box-->
+					<br />
+					<br />
+				</div>
+				<div class="rightbar">	
+					<h2>You Might Also Like</h2>
+					<div class="articleright">
+						<a href="nutritious-cheap-dinner-recipes.html">
+							<img src="images/foodthumb.jpg" /> 
+							<h2><span>10 Easy And Cheap <br />&nbsp;&nbsp;Dinner Recipes </span></h2>
+						</a> 
+					</div> 		
+					<div class="articleright">
+						<a href="laundry-tips.html">
+							<img src="images/laundrythumb.jpg" /> 
+							<h2><span>Student Laundry: <br />&nbsp;&nbsp;Top 6 Tips</span></span></h2>
+						</a> 
+					</div> 
+					<div class="articleright">
+						<a href="cleaning-hacks-for-lazy-students.html">
+							<img src="images/cleaningthumb.jpg" /> 
+							<h2><span>5 Cleaning Hacks <br />&nbsp;&nbsp;For Lazy Students</span></span></h2>
+						</a> 
+					</div> 
+				</div>
+			</div>
+		</div>
+
+  		<ul class="nav bottomnav">
+  			<li>
+  				<a class = "menu" href="disclaimer.html">Disclaimer</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="contact.html">Contact Us</a>
+  			</li>
+  			<li class="text-center">
+  				<a class ="menu" href="https://goo.gl/forms/tM0N4i3P3fLxZodk1">Get Hack The Uni in your inbox!</a>
+  			</li>
+		</ul>	
+				
+	</body>
+	
+</html>
+
+<script type="text/javascript"> 
+
+	/* To implement Google Custom Search appearing as overlay on the screen
+	   Source: http://stackoverflow.com/users/153723/ergec */
+	(function() {
+		var cx = '000634666056832805072:abkzi0wilfm';
+		var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+		gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	})();
+	/* End of Google Custom Search */
+	
+</script>	
+<script>
+	  
+	/* Google Analytics */
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-86674334-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>

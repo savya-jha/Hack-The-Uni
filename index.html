@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+		<title>Hack The Uni | Tips for Students</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<!--To implement smooth scroll down button. Javascript Source: http://stackoverflow.com/questions/18813299/changing-image-on-hover-with-css-html-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		
+		<meta name="author" content="Savyasachi Jha">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--images and text appearing in articles appearing on this website are aggregated from various sources which are credited on the relevant pages--> 
+		
+		<style>
+		
+			body {
+				margin: 0;	
+				height: 100%;
+				background-color: #f9f9f9;
+				min-width: 1200px;
+			}
+			ul.nav {
+    			position: relative;
+    			width: 100%;
+    			overflow: hidden;
+    			list-style-type: none;
+    			margin: 0;
+    			padding: 0;
+    			z-index: 10;
+    			box-shadow: 0 1px 20px 1px #111;
+    			background-color: #ffffff;
+    			max-height:3.9em;
+			}
+			ul.nav li {
+    			float: left;
+			}
+			ul.nav li.searchbox {
+    			float: right;
+    			margin:18px 22px 18px 18px;
+			}
+			#q {
+				height:22px;
+				width: 22px;
+				background-image: url('images/search-icon-dark.png');
+				background-position: 4px 5px;
+				background-repeat: no-repeat;
+				background-size: 16px 16px;
+				border:none;
+				transition: 0.4s;
+				border-radius: 14px;
+				font-size: 12px;
+			}
+			#q:hover {
+				background-image: url('images/search-icon-light.png');
+				border: 0px solid #cccccc;
+			}
+			#q:focus {
+				outline: none;
+				width: 120px;
+				padding: 0px 24px;
+				border: 1px solid #cccccc;
+				background-image: url('images/search-icon-light.png');
+				background-position: 4px 4px;
+			}
+			.gs-title {
+				margin:-15px 0px 0px -7px;
+			}
+			.gs-result {
+				margin-bottom:10px;
+			}
+			ul.nav a {
+    			padding: 15px;
+    			display: inline-block;
+    			text-decoration: none;
+    			color: #474747;
+			}
+			ul.nav a.menu {
+				padding: 1em;
+    			font-size: 20px;
+    			font-weight: bold;
+    			font-family: Trebuchet MS, Sans-Serif;
+    			transition: background-color 0.5s;
+    		}
+			ul.nav a.active {
+    			background-color: #b5ffb8;
+			}
+			ul.nav a.menu:hover {
+    			background-color: #00e51e;
+    			color: #ffffff;
+			}
+			ul.nav.bottomnav a.menu:hover {
+    			background-color: #ffffff;
+    			color: #000000;
+    			text-decoration: underline;
+			}
+			ul.nav a.menu:active {
+    			background-color: #dfffdb;
+			}
+			ul.nav.bottomnav {
+				position: relative;
+    			bottom:0px;    			
+    			width: 100%;	
+			}
+			ul.nav.bottomnav li {
+    			float: right;
+			}
+			ul.nav.bottomnav a {
+    			padding: 1 em 1.5em;
+				font-size: 15px;
+			}
+			#main {
+     			width: 90%;
+     			margin: auto;
+			}
+			#main h1 {
+				margin: 0px 0px 42px 21px;
+				font-family: 'Open Sans', Helvetica; 
+			}
+			.text-center {
+				margin: 0 25% 0 0;
+			}
+			.article { 
+   				position: relative; 
+   				width: 340px;
+   				height:240px;
+   				float:left;
+   				margin: 0px 21px 42px;
+			}
+			#articledrawer {
+				width: 1146px;
+				margin: 0 auto;
+			}
+			.article img { 
+				width: 100%;
+				height: 100%;
+			}
+			.article h2 { 
+   				position: absolute;
+   				bottom: 0px; 
+   				left: 0; 
+			}
+			.article h2 span { 
+   				color: #ffffff; 
+   				font-weight: bold;
+   				font-size: 1em;
+   				font-family: 'Open Sans', Helvetica; 
+   				line-height:2.23em;  
+   				background: rgba(0, 0, 0, 0.7);
+   				padding: 10px; 
+			}
+			.article:hover  h2 span { 
+				transition: 0.4s;
+				background: rgba(0, 0, 0, 1);
+			}
+			.topbanner {
+				height: 93vh;
+				width:100vw;
+				display: inline-block;
+				overflow: hidden;
+				margin: 0 0 45px;
+				white-space: normal;
+   				background-repeat: no-repeat;
+			}
+			.topbanner img.mainarticle {
+				width: 100%;
+			}
+			.topbanner img.downarrow {
+				position: absolute;
+				bottom: 0px;
+				margin: 0 50% 0 45%;
+				transition: 0.1s;
+				filter: drop-shadow(0px 6px 7px #000);
+			}
+			.topbanner h1 {
+				position: absolute;
+   				top: 32vh;
+			}
+			.topbanner spanh1 { 
+   				color: white; 
+   				font-weight: bold;
+   				font-size: 2em;
+   				font-family: 'Trebuchet ms', Sans-Serif; 
+   				line-height:1.48em;  
+   				background: rgba(0, 0, 0, 0.3);
+   				padding: 10px; 
+			}
+			.topbanner spanh1:hover {
+                transition: 0.4s;
+                background: rgba(0, 0, 0, 0.7); 
+            }
+			.topbanner spanh4 { 
+   				color: white; 
+   				font-weight: bold;
+   				font-size: 2em;
+   				font-family: 'Trebuchet ms', Sans-Serif; 
+   				line-height:2em;  
+   				background: rgba(0, 0, 0, 0.3);
+   				padding: 10px; 
+			}
+			hr {
+				border-top: 0.5px solid #cccccc;
+			}	
+			#wrapper {
+				width: 300vw;
+				position: relative;
+				left: 0px;
+				transition: left .5s ease-out;
+			}
+			.displayedtopbanner {
+				height: 93vh;
+				width:100vw;
+				overflow: hidden;
+			}
+			#latest1 {
+				background-image: url("images/lazyworkout1.jpg");
+				background-size: cover;
+			}
+			#latest2 {
+				background-image: url("images/ace-exam2.jpg");
+				background-size: cover;
+			}
+			#latest3 {
+				background-image: url("images/bannerfood.jpg");
+				background-size: cover;
+			}
+			#navLinks {
+				width: 550px;
+				display: inline;
+			}
+			#navLinks ul {
+				margin: 0px;
+				display: inline-block;
+			}
+			#navLinks ul li {
+				float: left;
+				text-align: center;
+				margin:0 8px;
+				list-style: none;
+				cursor: pointer;
+				padding: 5px;
+				border-radius: 50%;
+				background-color: #ffffff;
+				border: #ffffff 5px solid;
+			}
+			#navLinks ul li:hover {
+				background-color: #84d865;
+			}
+			#navLinks ul li.active {
+				background-color: #31bc00;
+				border: #ffffff 5px solid;
+			}
+			#topslider {
+				position: absolute;
+				top:30vh;
+				z-index:5;
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		
+		<ul class="nav">
+  			<li>
+  				<a href="index.html"><img src="images/logo.png" /></a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="about.html">ABOUT</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="study.html">STUDY</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="work-money.html">WORK & MONEY</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="exercise.html">EXERCISE</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="living.html">LIVING</a>
+  			</li>
+  			<li class="searchbox">
+  				<!--Google Custom Search. Modification to allow custom design, by: http://stackoverflow.com/users/153723/ergec-->
+  				<div style="width:0px;overflow:hidden;height:0px;">
+					<gcse:search></gcse:search>
+				</div>
+				<form id="000634666056832805072:abkzi0wilfm" action="">
+					<input value="000634666056832805072:abkzi0wilfm" name="cx" type="hidden"/>
+					<input value="FORID:11" name="cof" type="hidden"/>
+					<input id="q" name="q" size="75" type="text"/>
+					<button style="position:absolute; right:-10000px;z-index=-10;" class="btn"></button>
+				</form>
+				<!--End of Google Custom Search-->
+  			</li>
+		</ul>
+		
+		
+	
+
+		<div class="topbanner">
+		
+			<div id="topslider">
+				<h4><spanh4>
+				Latest 
+				<div id="navLinks">
+					<ul>
+						<li class="itemLinks" data-pos="0px"></li>
+						<li class="itemLinks" data-pos="-100vw"></li>
+						<li class="itemLinks" data-pos="-200vw"></li>
+					</ul>
+				</div>
+				</spanh4></h4>	
+			</div>
+			
+			<div class="displayedtopbanner">
+			 	
+				<div id="wrapper">
+					<div id="latest1" class="topbanner">
+						<a href="keep-fit-lazy.html">
+							<h1><spanh1>Working Around Your Lazy <br />&nbsp;And Keeping Fit </spanh1></h1>
+						</a>
+					</div><div id="latest2" class="topbanner">
+						<a href="tips-to-ace-exam.html">
+							<h1><spanh1>Studying Hacks <br />&nbsp;To Help You Ace Your Exam </spanh1></h1>
+						</a>
+					</div><div id="latest3" class="topbanner">
+						<a href="nutritious-cheap-dinner-recipes.html">
+							<h1><spanh1>10 Nutritious Dinner Recipes <br />&nbsp;That Don't Break The Bank </spanh1></h1>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<!--Smooth Scroll Down Button-->
+			<a class="smoothScroll" href="#main">
+				<!--Javascript source: http://stackoverflow.com/questions/18813299/changing-image-on-hover-with-css-html-->
+				<img class="downarrow" src="images/downarrownewlight.png" onmouseover="this.src='images/downarrownew.png';" onmouseout="this.src='images/downarrownewlight.png';" />
+			</a>
+			<!--End of Smooth Scroll Down Button-->
+
+		</div>
+			
+		<div id="main">	
+			<div id="articledrawer">
+				<h1>Popular</h1>
+				<hr/>
+				<br/>
+				<br/>
+				<div class="article">
+    				<a href="tips-to-ace-exam.html">
+    					<img src="images/ace-exam2.jpg" /> 
+    					<h2><span>Studying Hacks To <br />&nbsp;Help You Ace Your Exams </span></h2>
+					</a> 
+				</div> 		
+				<div class="article">
+    				<a href="note-taking-techniques.html">
+    					<img src="images/notes.jpg" /> 
+    					<h2><span>Note Taking Techniques <br />&nbsp; For Effective Learning </span></h2>
+					</a> 
+				</div> 		
+				<div class="article">
+    				<a href="keep-fit-lazy.html">
+    					<img src="images/lazyworkout1.jpg" /> 
+						<h2><span>Working Around Your Lazy <br />&nbsp;And Keeping Fit </span></span></h2>
+					</a> 
+				</div> 
+				<div class="article">
+    				<a href="exercise-university-balance.html">
+    					<img src="images/exercise-uni-bal1.jpg" /> 
+    					<h2><span>How To Fit Exercise In <br />&nbsp;Your Schedule (By A Grad) </span></h2>
+					</a> 
+				</div> 
+				<div class="article">
+					<a href="4-study-effectiveness-tools.html">
+						<img src="images/study-tools.jpg" /> 
+						<h2><span>4 Tools To Make Studying <br />&nbsp;Easier And More Effective </span></h2>
+					</a> 
+				</div> 	
+				<div class="article">
+    				<a href="decoration-uni-room.html">
+    					<img src="images/decoration-uni-room2.jpg" /> 
+    					<h2><span>Decorating Hacks For Your <br />&nbsp;New University Room </span></h2>
+					</a> 
+				</div> 
+				<div class="article">
+    				<a href="work-university-balance.html">
+    					<img src="images/work.jpg" /> 
+    					<h2><span>Creating A Work/University <br />&nbsp;Balance </span></h2>
+					</a> 
+				</div>    	
+				<div class="article">
+					<a href="student-budget.html">
+						<img src="images/student-budget1.jpg" /> 
+						<h2><span>How to Create <br />&nbsp;A Student Budget </span></h2>
+					</a> 
+				</div> 	
+				<div class="article">
+					<a href="laundry-tips.html">
+						<img src="images/laundrythumb.jpg" /> 
+						<h2><span>Student Laundry: <br />&nbsp;Top 6 Tips </span></span></h2>
+					</a> 
+				</div> 
+				<div class="article">
+					<a href="tips-for-revision.html">
+						<img src="images/revision1.jpg" /> 
+						<h2><span>Top Tips For <br />&nbsp;Effective Revision </span></span></h2>
+					</a> 
+				</div>
+				<div class="article">
+					<a href="find-work-while-at-university.html">
+						<img src="images/student-job1.jpg" /> 
+						<h2><span>Finding Work <br />&nbsp;While At University </span></h2>
+					</a> 
+				</div> 
+				<div class="article">
+					<a href="cleaning-hacks-for-lazy-students.html">
+						<img src="images/cleaningthumb.jpg" /> 
+						<h2><span>5 Cleaning Hacks <br />&nbsp;For Lazy Students </span></span></h2>
+					</a> 
+				</div> 
+			</div>
+    	</div>
+    	
+  		<ul class="nav bottomnav">
+  			<li>
+  				<a class = "menu" href="disclaimer.html">Disclaimer</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="contact.html">Contact Us</a>
+  			</li>
+  			<li class="text-center">
+  				<a class ="menu" href="https://goo.gl/forms/tM0N4i3P3fLxZodk1">Get Hack The Uni in your inbox!</a>
+  			</li>
+		</ul>	
+				
+	</body>
+	
+</html>
+
+<script type="text/javascript"> 
+
+	/* To implement Google Custom Search appearing as overlay on the screen
+	   Source: http://stackoverflow.com/users/153723/ergec */
+	(function() {
+		var cx = '000634666056832805072:abkzi0wilfm';
+		var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+		gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	})();
+	/* End of Google Custom Search */
+	
+	/* To implement smooth scrolling 
+	   Source: https://css-tricks.com/snippets/jquery/smooth-scrolling/ */
+	$(function() {
+	  // This will select everything with the class smoothScroll
+	  // This should prevent problems with carousel, scrollspy, etc...
+	  $('.smoothScroll').click(function() {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+		  var target = $(this.hash);
+		  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		  if (target.length) {
+			$('html,body').animate({
+			  scrollTop: target.offset().top -45
+			}, 600); // The number here represents the speed of the scroll in milliseconds
+			return false;
+		  }
+		}
+	  });
+	});
+	/* End of Smooth Scrolling */
+	
+	/* To implement Top Slider 
+       Source: http://www.kirupa.com/html5/creating_a_sweet_content_slider.htm */
+		// just querying the DOM...like a boss!
+		var links = document.querySelectorAll(".itemLinks");
+		var wrapper = document.querySelector("#wrapper");
+ 
+		// the activeLink provides a pointer to the currently displayed item
+		var activeLink = 0;
+ 
+		// setup the event listeners
+		for (var i = 0; i < links.length; i++) {
+			var link = links[i];
+			link.addEventListener('click', setClickedItem, false);
+ 
+			// identify the item for the activeLink
+			link.itemID = i;
+		}
+ 
+		// set first item as active
+		links[activeLink].classList.add("active");
+ 
+		function setClickedItem(e) {
+			removeActiveLinks();
+			resetTimer();
+ 
+			var clickedLink = e.target;
+			activeLink = clickedLink.itemID;
+ 
+			changePosition(clickedLink);
+		}
+ 
+		function removeActiveLinks() {
+			for (var i = 0; i < links.length; i++) {
+				links[i].classList.remove("active");
+			}
+		}
+ 
+		// Handle changing the slider position as well as ensure
+		// the correct link is highlighted as being active
+		function changePosition(link) {
+			link.classList.add("active");
+ 
+			var position = link.getAttribute("data-pos");
+			wrapper.style.left = position;
+		}
+
+		//
+		// The code for sliding the content automatically
+		//
+		var timeoutID;
+ 
+		function startTimer() {
+			// wait 2.3 seconds before calling goInactive
+			timeoutID = window.setInterval(goToNextItem, 2300);
+		}
+		startTimer();
+ 
+		function resetTimer() {
+			window.clearInterval(timeoutID);
+			startTimer();
+		}
+ 
+		function goToNextItem() {
+			removeActiveLinks();
+ 
+			if (activeLink < links.length - 1) {
+				activeLink++;
+			} else {
+				activeLink = 0;
+			}
+ 
+			var newLink = links[activeLink];
+			changePosition(newLink);
+		}
+
+	/* End of Top Slider */
+	
+</script>	
+<script>
+	  
+	/* Google Analytics */
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-86674334-1', 'auto');
+		ga('send', 'pageview');
+	/* End of Google Analytics */
+	
+</script>

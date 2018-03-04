@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+		<title>Balancing Work And University - Hack The Uni</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<style>
+
+			body {
+				margin: 0;	
+				height: 100%;
+				background-color: #f9f9f9;
+				min-width: 1000px;
+			}
+			ul.nav {
+    			position: relative;
+    			width: 100%;
+    			overflow: hidden;
+    			list-style-type: none;
+    			margin: 0;
+    			padding: 0;
+    			z-index: 10;
+    			box-shadow: 0 1px 20px 1px #111;
+    			background-color: #ffffff;
+			}
+			ul.nav li {
+    			float: left;
+			}
+			ul.nav li.searchbox {
+    			float: right;
+    			margin:18px 22px 18px 18px;
+			}
+			#q {
+				height:22px;
+				width: 22px;
+				background-image: url('images/search-icon-dark.png');
+				background-position: 4px 5px;
+				background-repeat: no-repeat;
+				background-size: 16px 16px;
+				border:none;
+				transition: 0.4s;
+				border-radius: 14px;
+				font-size: 12px;
+			}
+			#q:hover {
+				background-image: url('images/search-icon-light.png');
+				border: 0px solid #cccccc;
+			}
+			#q:focus {
+				outline: none;
+				width: 120px;
+				padding: 0px 24px;
+				border: 1px solid #cccccc;
+				background-image: url('images/search-icon-light.png');
+				background-position: 4px 4px;
+			}
+			.gs-title {
+				margin:-15px 0px 0px -7px;
+			}
+			.gs-result {
+				margin-bottom:10px;
+			}
+			ul.nav a {
+    			padding: 15px;
+    			display: inline-block;
+    			text-decoration: none;
+    			color: #474747;
+			}
+			ul.nav a.menu {
+				padding: 1em;
+    			font-size: 20px;
+    			font-weight: bold;
+    			font-family: Trebuchet MS, Sans-Serif;
+    			transition: background-color 0.5s;
+    		}
+			ul.nav a.active {
+    			background-color: #b5ffb8;
+			}
+			ul.nav a.menu:hover {
+    			background-color: #00e51e;
+    			color: #ffffff;
+			}
+			ul.nav.bottomnav a.menu:hover {
+    			background-color: #ffffff;
+    			color: #000000;
+    			text-decoration: underline;
+			}
+			ul.nav a.menu:active {
+    			background-color: #dfffdb;
+			}
+			ul.nav.bottomnav {
+				position: relative;
+    			bottom:0px;    			
+    			width: 100%;	
+			}
+			ul.nav.bottomnav li {
+    			float: right;
+			}
+			ul.nav.bottomnav a {
+    			padding: 1 em 1.5em;
+				font-size: 15px;
+			}
+			#main {
+     			width: 90%;
+     			margin: auto;
+			}
+			#main h1 {
+				margin: 0px 0px 42px 21px;
+				font-family: "Trebuchet ms", Sans-Serif; 
+			}
+			.text-center {
+				margin: 0 27.5% 0 0;
+			}
+			.content {
+				width=100%;
+				margin: 60px 0px 0px 0px;
+				color: #515151;
+			}
+			.content a {
+				text-decoration:none;
+				color: #02a300;
+			}
+			.leftbar {
+				float:left;
+				width:19%;
+				margin:1% 5% 0 0;
+				font-family: 'Open Sans', Helvetica !important;
+				font-weight:bold !important;
+				font-size: 1em;
+			}
+			.middlebar {
+				display:inline-block;
+				width:48%;
+				font-family: 'Open Sans', Helvetica !important;
+				line-height:2em;
+				font-size: 1.1em;
+			}
+			.middlebar h1 {
+				text-align: center;
+				line-height:1.3em !important;
+				font-family: 'Open Sans', Helvetica !important;
+			}
+			.middlebar h3 {
+				font-family: 'Open Sans Bold', Helvetica !important;
+			}
+			.middlebar img {
+				width:100%;
+			}
+			.rightbar {
+				float:right;
+				width:23%;
+				margin:-15px 0 0 2% ; 
+				overflow: hidden;
+				font-family: 'Open Sans', Helvetica;
+			}
+			hr {
+				border-top: 0.5px solid #cccccc;
+			}	
+			.articleright { 
+   				position: relative; 
+   				width: 100%;
+   				float:left;
+   				margin: 10px auto;
+			}
+			.articleright img { 
+				width: 100%;
+			}
+			.articleright h2 { 
+   				position: absolute;
+   				bottom: 0px; 
+   				left: 0; 
+			}
+			.articleright h2 span { 
+   				color: #ffffff; 
+   				font-size: 0.75em;
+   				font-family: "Trebuchet ms", Sans-Serif; 
+   				line-height:2.3em;  
+   				background: rgba(0, 0, 0, 0.7);
+   				padding: 10px 10px 10px 15px; 
+			}
+			.articleright:hover  h2 span {  
+				transition: 0.2s;
+				background: rgba(0, 0, 0, 1);
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+			
+		<!--Facebook Comments Plugin-->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!--End of Facebook Comments Plugin-->	
+		
+		<ul class="nav">
+  			<li>
+  				<a href="index.html"><img src="images/logo.png" /></a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="about.html">ABOUT</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="study.html">STUDY</a>
+  			</li>
+  			<li>
+  				<a class = "menu active" href="work-money.html">WORK & MONEY</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="exercise.html">EXERCISE</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="living.html">LIVING</a>
+  			</li>
+  			<li class="searchbox">
+  				<!--Google Custom Search. Modification to allow custom design, by: http://stackoverflow.com/users/153723/ergec-->
+  				<div style="width:0px;overflow:hidden;height:0px;">
+					<gcse:search></gcse:search>
+				</div>
+				<form id="000634666056832805072:abkzi0wilfm" action="">
+					<input value="000634666056832805072:abkzi0wilfm" name="cx" type="hidden"/>
+					<input value="FORID:11" name="cof" type="hidden"/>
+					<input id="q" name="q" size="75" type="text"/>
+					<button style="position:absolute; right:-10000px;z-index=-10;" class="btn"></button>
+				</form>
+				<!--End of Google Custom Search-->
+  			</li>
+		</ul>
+			
+		<div id="main">	
+			<div class="content">
+				<div class="leftbar">
+					Share This: <br /><br />
+					
+					<!--To implement buttons to share on social media. Source: https://www.addtoany.com/buttons/for/website-->
+					<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+						<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+						<a class="a2a_button_facebook"></a>
+						<a class="a2a_button_linkedin"></a>
+						<a class="a2a_button_twitter"></a>
+						<a class="a2a_button_google_plus"></a>
+					</div>
+					<script async src="https://static.addtoany.com/menu/page.js"></script>
+					<!--End of Share Buttons-->
+					
+					<br />
+					<hr />
+					<h5>Writer: <br />Keisha M. Carr</h5>
+					<br />
+				</div>
+				<div class="middlebar">
+					<h1>Creating A Work/University Balance (A College Student Perspective)</h1>
+					<img class="middlebar" src="images/work.jpg" />
+					<p> 
+						At some point in your academic career, you may find yourself with a part-time job. Even if you’re just taking classes, you might become involved with extracurricular activities. It's important to learn how to balance your classes with everything else in your life.
+					</p>
+					<p>
+					<h3>My job</h3>
+					<p>
+						My primary job is working in a research lab on campus. Additionally, I’m involved in a number of student organizations. All together, these activities account for about 20 hours a week out of my schedule.
+					</p>
+					<h3>My classes</h3>
+					<p>
+						I typically take 15 credits a semester, which translates to 5 classes. I usually spend 30 to 50 hours a week studying (which includes working on projects, problem sets, study groups and reading).
+					</p>
+					<h3>My tips</h3>
+					<p>
+						I’m starting my fifth year of undergrad (fourth year of simultaneously working part-time) and these are the tips that help me the most.
+					</p>
+					<h3>1. Write out a monthly schedule</h3>
+					<p>
+						Here is mine (I purposefully selected my busiest month). I include things like homework assignments, exams, project due dates, meetings, travel and personal events.
+					</p>
+					<img class="middlebar" src="images/work-uni3.jpg" />
+					<p>
+						This kind of schedule will show you if there are any very busy times further down the road. In my schedule, I could see that the last Saturday was going to be a very busy day, so I was able to plan my activities accordingly. The earlier you know about a conflict, the sooner you can make a plan (which is the next bullet).
+					</p>
+					<h3>2. Have a contingency plan</h3>
+					<p>
+						There will, inevitably, be a period of time when you are slammed with school work. You’ll have a bunch of projects, exams, homework and meetings piled up. Plan for it now and think about what you will do if you find yourself falling behind. Will your employer let you change your schedule? Or work from home? Will you have to start your classwork earlier? Since I work on campus with a professor, he is very flexible with me changing my hours in order to study. I often make up for the time that I miss in the lab by doing some of my work at home though so that I do not fall behind with my project. Discuss options with your employer early.
+					</p>
+					<h3>3. Prioritize</h3>
+					<p>
+						At the end of the day, what is your ultimate goal? To have the highest GPA possible? To be the best employer? To get through college and your job? This will help you decide what to do first when you have a conflict.
+					</p>
+					<!--Facebook Comment Box-->
+					<div class="fb-comments" data-href="http://hacktheuni.com/work-university-balance.html" data-width="100%" data-numposts="5"></div>
+					<!--End of Facebook Comment Box-->
+					<br />
+					<br />
+				</div>
+				<div class="rightbar">
+					<h2>You Might Also Like</h2>
+					<div class="articleright">
+						<a href="find-work-while-at-university.html">
+							<img src="images/student-job1.jpg" /> 
+							<h2><span>Finding Work <br />&nbsp;&nbsp;While At University</span></h2>
+						</a> 
+					</div> 
+					<div class="articleright">
+						<a href="student-budget.html">
+							<img src="images/student-budget1.jpg" /> 
+							<h2><span>How to Create <br />&nbsp;&nbsp;A Student Budget</span></h2>
+						</a> 
+					</div> 		
+					<div class="articleright">
+						<a href="nutritious-cheap-dinner-recipes.html">
+							<img src="images/foodthumb.jpg" /> 
+							<h2><span>10 Nutritious Dinner Recipes <br />&nbsp;That Don't Break the Bank</span></h2>
+						</a> 
+					</div> 		
+				</div>
+			</div>
+		</div>
+
+  		<ul class="nav bottomnav">
+  			<li>
+  				<a class = "menu" href="disclaimer.html">Disclaimer</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="contact.html">Contact Us</a>
+  			</li>
+  			<li class="text-center">
+  				<a class ="menu" href="https://goo.gl/forms/tM0N4i3P3fLxZodk1">Get Hack The Uni in your inbox!</a>
+  			</li>
+		</ul>	
+				
+	</body>
+	
+</html>
+
+<script type="text/javascript"> 
+
+	/* To implement Google Custom Search appearing as overlay on the screen
+	   Source: http://stackoverflow.com/users/153723/ergec */
+	(function() {
+		var cx = '000634666056832805072:abkzi0wilfm';
+		var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+		gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	})();
+	/* End of Google Custom Search */
+	
+</script>	
+<script>
+	  
+	/* Google Analytics */
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-86674334-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+		//
+		// The code for sliding the content automatically
+		//
+		var timeoutID;
+ 
+		function startTimer() {
+			// wait 2 seconds before calling goInactive
+			timeoutID = window.setInterval(goToNextItem, 2000);
+		}
+		startTimer();
+ 
+		function resetTimer() {
+			window.clearInterval(timeoutID);
+			startTimer();
+		}
+ 
+		function goToNextItem() {
+			removeActiveLinks();
+ 
+			if (activeLink < links.length - 1) {
+				activeLink++;
+			} else {
+				activeLink = 0;
+			}
+ 
+			var newLink = links[activeLink];
+			changePosition(newLink);
+		}
+		
+		function setClickedItem(e) {
+			removeActiveLinks();
+			resetTimer();
+ 
+			var clickedLink = e.target;
+			activeLink = clickedLink.itemID;
+ 
+			changePosition(clickedLink);
+		}
+

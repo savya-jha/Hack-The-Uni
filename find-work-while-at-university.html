@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+		<title>Finding Work While At University - Hack The Uni</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		
+		<meta name="author" content="Savyasachi Jha">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--images and text appearing in articles appearing on this website are aggregated from various sources which are credited on the relevant pages--> 
+
+		<style>
+
+			body {
+				margin: 0;	
+				height: 100%;
+				background-color: #f9f9f9;
+				min-width: 1000px;
+			}
+			ul.nav {
+    			position: relative;
+    			width: 100%;
+    			overflow: hidden;
+    			list-style-type: none;
+    			margin: 0;
+    			padding: 0;
+    			z-index: 100000;
+    			box-shadow: 0 1px 20px 1px #111;
+    			background-color: #ffffff;
+			}
+			ul.nav li {
+    			float: left;
+			}
+			ul.nav li.searchbox {
+    			float: right;
+    			margin:18px 22px 18px 18px;
+			}
+			#q {
+				height:22px;
+				width: 22px;
+				background-image: url('images/search-icon-dark.png');
+				background-position: 4px 5px;
+				background-repeat: no-repeat;
+				background-size: 16px 16px;
+				border:none;
+				transition: 0.4s;
+				border-radius: 14px;
+				font-size: 12px;
+			}
+			#q:hover {
+				background-image: url('images/search-icon-light.png');
+				border: 0px solid #cccccc;
+			}
+			#q:focus {
+				outline: none;
+				width: 120px;
+				padding: 0px 24px;
+				border: 1px solid #cccccc;
+				background-image: url('images/search-icon-light.png');
+				background-position: 4px 4px;
+			}
+			.gs-title {
+				margin:-15px 0px 0px -7px;
+			}
+			.gs-result {
+				margin-bottom:10px;
+			}
+			ul.nav a {
+    			padding: 15px;
+    			display: inline-block;
+    			text-decoration: none;
+    			color: #474747;
+			}
+			ul.nav a.menu {
+				padding: 1em;
+    			font-size: 20px;
+    			font-weight: bold;
+    			font-family: Trebuchet MS, Sans-Serif;
+    			transition: background-color 0.5s;
+    		}
+			ul.nav a.active {
+    			background-color: #b5ffb8;
+			}
+			ul.nav a.menu:hover {
+    			background-color: #00e51e;
+    			color: #ffffff;
+			}
+			ul.nav.bottomnav a.menu:hover {
+    			background-color: #ffffff;
+    			color: #000000;
+    			text-decoration: underline;
+			}
+			ul.nav a.menu:active {
+    			background-color: #dfffdb;
+			}
+			ul.nav.bottomnav {
+				position: relative;
+    			bottom:0px;    			
+    			width: 100%;	
+			}
+			ul.nav.bottomnav li {
+    			float: right;
+			}
+			ul.nav.bottomnav a {
+    			padding: 1 em 1.5em;
+				font-size: 15px;
+			}
+			#main {
+     			width: 90%;
+     			margin: auto;
+			}
+			#main h1 {
+				margin: 0px 0px 42px 21px;
+				font-family: "Trebuchet ms", Sans-Serif; 
+			}
+			.text-center {
+				margin: 0 25% 0 0;
+			}
+			.content {
+				width=100%;
+				margin: 60px 0px 0px 0px;
+				color: #515151;
+			}
+			.content a {
+				text-decoration:none;
+				color: #02a300;
+			}
+			.leftbar {
+				
+				float:left;
+				width:19%;
+				margin:1% 5% 0 0;
+				font-family: 'Open Sans', Helvetica !important;
+				font-weight:bold !important;
+				font-size: 1em;
+			}
+			.middlebar {
+				display:inline-block;
+				width:48%;
+				font-family: 'Open Sans', Helvetica !important;
+				line-height:2em;
+				font-size: 1.1em;
+			}
+			.middlebar h1 {
+				text-align: center;
+				line-height:1.3em !important;
+				font-family: 'Open Sans', Helvetica !important;
+			}
+			.middlebar h3 {
+				font-family: 'Open Sans Bold', Helvetica !important;
+			}
+			.middlebar img {
+				width:100%;
+			}
+			.rightbar {
+				float:right;
+				width:23%;
+				margin:-15px 0 0 2% ; 
+				overflow: hidden;
+				font-family: 'Open Sans', Helvetica;
+			}
+			hr {
+				border-top: 0.5px solid #cccccc;
+			}	
+			.articleright { 
+   				position: relative; 
+   				width: 100%;
+   				float:left;
+   				margin: 10px auto;
+			}
+			.articleright img { 
+				width: 100%;
+			}
+			.articleright h2 { 
+   				position: absolute;
+   				bottom: 0px; 
+   				left: 0; 
+			}
+			.articleright h2 span { 
+   				color: #ffffff; 
+   				font-size: 0.75em;
+   				font-family: "Trebuchet ms", Sans-Serif; 
+   				line-height:2.3em;  
+   				background: rgba(0, 0, 0, 0.7);
+   				padding: 10px 10px 10px 15px; 
+			}
+			.articleright:hover  h2 span { 
+				transition: 0.2s;
+				background: rgba(0, 0, 0, 1);
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		
+		<!--Facebook Comments Plugin-->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!--End of Facebook Comments Plugin-->	
+		
+		<ul class="nav">
+  			<li>
+  				<a href="index.html"><img src="images/logo.png" /></a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="about.html">ABOUT</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="study.html">STUDY</a>
+  			</li>
+  			<li>
+  				<a class = "menu active" href="work-money.html">WORK & MONEY</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="exercise.html">EXERCISE</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="living.html">LIVING</a>
+  			</li>
+  			<li class="searchbox">
+  				<!--Google Custom Search. Modification to allow custom design, by: http://stackoverflow.com/users/153723/ergec-->
+  				<div style="width:0px;overflow:hidden;height:0px;">
+					<gcse:search></gcse:search>
+				</div>
+				<form id="000634666056832805072:abkzi0wilfm" action="">
+					<input value="000634666056832805072:abkzi0wilfm" name="cx" type="hidden"/>
+					<input value="FORID:11" name="cof" type="hidden"/>
+					<input id="q" name="q" size="75" type="text"/>
+					<button style="position:absolute; right:-10000px;z-index=-10;" class="btn"></button>
+				</form>
+				<!--End of Google Custom Search-->
+  			</li>
+		</ul>
+			
+		<div id="main">	
+			<div class="content">
+				<div class="leftbar">
+					Share This: <br /><br />
+					<!--To implement buttons to share on social media. Source: https://www.addtoany.com/buttons/for/website-->
+					<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+						<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+						<a class="a2a_button_facebook"></a>
+						<a class="a2a_button_linkedin"></a>
+						<a class="a2a_button_twitter"></a>
+						<a class="a2a_button_google_plus"></a>
+					</div>
+					<script async src="https://static.addtoany.com/menu/page.js"></script>
+					<!--End of Share Buttons-->
+					
+					<br />
+					<hr />
+					<h4>Writer: <br />Harry Becker </h4>
+					<br />
+				</div>
+				<div class="middlebar">
+					<h1>Finding Work While At University</h1>
+					<img class="middlebar" src="images/student-job1.jpg" />
+					<p> 
+						I’ve never been particularly good with money. When I have it, I spend it. When I don’t have it, I spend it too. During my gap year, I spent six months working full time so that I could go travelling. I earned somewhere in the region of £6,000 but despite the fact I was living with my parents and not paying for food or rent, I still managed to spend money like it was going out of fashion, and only saved £2,000. 
+						<br />
+						<br />
+						When I finally got to Australia, I quickly blew my budget and was forced to find work cleaning toilets for meals and accommodation.
+						<br />
+						<br />
+						It would be reasonable to assume I’d learn from this experience and spend money more wisely at university. I didn’t. When the loan came in at the beginning of every term, I lived like a king and by the end, I was literally counting the pennies. Needless to say, the stress of not knowing exactly how I was going to afford my next meal wasn’t conducive to study and, as the end of each term approached, to my shame, I would be forced to make the dreaded phone call: “Mum, I’ve run out of money. Can I have some, please?”
+						<br />
+						<br />
+						Financially, my second year was much easier than my first, for two reasons. First, I applied for an income-assessed loan and received a little extra. Secondly, I got a job working in the Student Union bar. The extra money I made from working 15 hours a week eased the anxiety about finances and helped me focus on what was important, namely, studying.
+						<br />
+						<br />
+						In the United States, studies have shown that up to 78 per cent of students work while they are studying in order to fund themselves through college. In Britain, the number of working students is growing fast. According to the TUC and the NUS, the amount of working students increased by more than half from 1996–2006. With rising living costs, a hike in tuition fees and the impending changes to the grants system, the number of students looking for work is set to increase and competition for jobs will be tougher than ever.
+						<br />
+						<br />
+						It is best to start applying for jobs as soon as you arrive at uni via the internet. Remember that you are competing with thousands of other students and the merest hint of forward thinking will give you a head start.
+						<br />
+						<br />
+						Student jobs — both university posts and those from outside companies — are normally advertised through the Student Union. If you are serious about getting work, you should apply for as many vacancies as you can. Retail, bar work, cleaning toilets, admin: they all pay the bills. Get yourself out and about. As well as applying online, hand your CV in to bars and shops in person.
+						<br />
+						<br />
+						Promotional companies which organise student nights at clubs and bars often advertise vacancies through Facebook. Be sure to join their groups and get on their mailing lists. They normally offer relatively undemanding work such as flier-ing, which is an easy way to earn some extra cash. Bar work, though, is the most common way to earn money, especially in a town with a large student population. If possible, get some bar experience before you go to uni, even if only for a month or so, as this will boost your chances of landing work tenfold. I worked in a bar during the summer and this experience stood me in good stead when I applied for work the following term.
+						<br />
+						<br />
+						You will probably have to take any work you are offered but, in my opinion, working for your Student Union is the best option. Your SU will appreciate that you are, first and foremost, a student, which means that during exam periods or on those (naturally) extremely rare occasions when you leave that 2,000-word essay on the economics of early Anglo-Saxon England to the night before the deadline, getting time off is relatively straightforward.
+						<br />
+						<br />
+						While some new students are understandably anxious that working long hours might harm their studies, the reality is that students don’t really work that hard. Ever. Not unless you’re studying medicine. For the majority of students, there are more than enough hours in the day to both study and work. A friend of mine, Ben, who works for the promotional company Roughhill organising and promoting club nights, told me that when it comes to work and studying, “it’s just a case of managing your time well”. It really is. Students squander a horrifically large tranche of time procrastinating on Facebook and typing “funny cats” into YouTube. There will be plenty of time for that once they have graduated.
+						<br />
+						<br />
+						Before you start work, it’s important to tell your employer the nights you need off. If you are unlucky enough to have a 9am seminar with a particularly stern tutor every Wednesday, for example, you don’t want to be serving drinks until three the same morning.
+						<br />
+						<br />
+						While it’s important to not let work become more important than your studies (I’d recommend no more than 15-20 hours a week), if you’re constantly worrying about money, you’re not going to be able to study well either. Having a job has many benefits. Not only will you have some spare cash, you’ll also learn to budget, manage your time, gain some valuable experience and improve your CV and career prospects. Moreover, a study in the US has found that students who have jobs and work no more than 20 hours a week get better grades than those who don’t work at all.
+						<br />
+						<br />
+						I have recently started back at university for my third and final year. I’ll keep working at the SU bar and I’ll keep spending lavishly, when I can afford it; and probably when I can’t too. The hard times are hard but the good ones are just too good to miss.
+					</p>
+					<!--Facebook Comment Box-->
+					<div class="fb-comments" data-href="http://hacktheuni.com/find-work-while-at-university.html" data-width="100%" data-numposts="5"></div>
+					<!--End of Facebook Comment Box-->
+					<br />
+					<br />
+				</div>
+				<div class="rightbar">
+					<h2>You Might Also Like</h2>
+					<div class="articleright">
+						<a href="nutritious-cheap-dinner-recipes.html">
+							<img src="images/foodthumb.jpg" /> 
+							<h2><span>10 Nutritious Dinner Recipes <br />&nbsp;That Don't Break the Bank</span></h2>
+						</a> 
+					</div> 
+					<div class="articleright">
+						<a href="student-budget.html">
+							<img src="images/student-budget1.jpg" /> 
+							<h2><span>How to Create <br />&nbsp;&nbsp;A Student Budget</span></h2>
+						</a> 
+					</div> 				
+					<div class="articleright">
+					<a href="work-university-balance.html">
+						<img src="images/work.jpg" /> 
+						<h2><span>Creating A Work/University <br />&nbsp;&nbsp;Balance</span></span></h2>
+					</a> 
+					</div> 
+				</div>
+			</div>
+		</div>
+
+  		<ul class="nav bottomnav">
+  			<li>
+  				<a class = "menu" href="disclaimer.html">Disclaimer</a>
+  			</li>
+  			<li>
+  				<a class = "menu" href="contact.html">Contact Us</a>
+  			</li>
+  			<li class="text-center">
+  				<a class ="menu" href="https://goo.gl/forms/tM0N4i3P3fLxZodk1">Get Hack The Uni in your inbox!</a>
+  			</li>
+		</ul>	
+				
+	</body>
+	
+</html>
+
+<script type="text/javascript"> 
+
+	/* To implement Google Custom Search appearing as overlay on the screen
+	   Source: http://stackoverflow.com/users/153723/ergec */
+	(function() {
+		var cx = '000634666056832805072:abkzi0wilfm';
+		var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+		gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	})();
+	/* End of Google Custom Search */
+	
+</script>	
+<script>
+	  
+	/* Google Analytics */
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-86674334-1', 'auto');
+	  ga('send', 'pageview');
+
+</script>
